@@ -26,7 +26,6 @@ body {
 }
 
 .start-btn button {
-    display: none;
     font-size: 25px;
     font-weight: 500;
     color: #ffffff;
@@ -113,7 +112,7 @@ body {
     background-color: #891209;
   }
   .quiz-box {
-    /* display: none;   */
+    display: none; 
     width: 700px;
     height: 600px;
     background: linear-gradient(rgba(249, 249, 249, 0.796),  
@@ -141,13 +140,13 @@ body {
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
   }
   
-  .quiz-box header .title {
+ .title {
     font-size: 30px;
     font-weight: 600;
     color:#891209;
   }
   
-  .quiz-box header .timer {
+ .timer {
     color: #891209;
     background: white;
     border: 2px solid #8e8e8e85;
@@ -159,6 +158,22 @@ body {
     align-items: center;
     justify-content: space-between; 
     width: 145px;
+    font-weight: 400;
+    font-size: 17px;
   }
 
-  
+    .timer-sec {
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40;
+   
+  }
+
+
