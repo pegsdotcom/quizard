@@ -15,6 +15,23 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+body.dark-mode {
+  background-image: url(dark-mode.png);
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .quiz-box,
+body.dark-mode .info-box,
+body.dark-mode .result-box {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 2px solid #444;
+}
+body.dark-mode button {
+  background-color: #333;
+  color: #ffffff;
+}
 
 .start-btn, .info-box, .quiz-box, .result-box{
   position: absolute;
@@ -269,3 +286,17 @@ body {
     }
 
  
+  #themeToggle{
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color:#891209;
+    color: white;
+    font-weight: 500px;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+    
+  }
+
+
