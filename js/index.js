@@ -155,17 +155,20 @@ function createResultList() {
     questions.forEach((question, index) => {
         let listItem = document.createElement('li');
         let answerStatus = answersStatus[index] ? 'Rätt' : 'Fel';
-        listItem.textContent = `${question.question} - Du svarade: ${answerStatus}`;
-        
+        listItem.innerHTML = `
+        <strong>${question.question}</strong><br>
+        <span style="color: ${answersStatus[index] ? 'green' : 'red'};">
+            Du svarade: ${answersStatus[index] ? question.options[userAnswers[index]] : question.options[userAnswers[index]] || "Inget svar"} (${answerStatus})
+        </span><br>
+        ${!answersStatus[index] ? `<span style="color: green;">Rätt svar: ${question.options[question.correctAnswer]}</span>` : ''}
+    `;
         if (answersStatus[index]) {
             listItem.classList.add('Rätt'); 
         } else {
             listItem.classList.add('Fel'); 
         }
-
         resultList.appendChild(listItem);
     });
-
     resultBox.appendChild(resultList); 
 }
 
@@ -181,13 +184,13 @@ function displayResults() {
     let resultColor = '';
 
     if (percentage < 50) {
-        resultText = 'Underkänt';
+        resultText = 'Underkänt 😭';
         resultColor = 'red'; 
     } else if (percentage >= 50 && percentage < 75) {
-        resultText = 'Bra';
+        resultText = 'Bra 😊';
         resultColor = 'orange'; 
     } else {
-        resultText = 'Riktigt bra jobbat';
+        resultText = 'Riktigt bra jobbat 🫡';
         resultColor = 'green'; 
     }
 

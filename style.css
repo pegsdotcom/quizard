@@ -15,60 +15,58 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Dark-mode */
 body.dark-mode {
   background-image: url(dark-mode.png);
-  background-color: #121212;
-  color: #ffffff;
 }
 
-body.dark-mode, body.dark-mode * {
-  color: black !important;
+ body.dark-mode * {
+  background: #333!important; 
+  color: white !important;
 }
-
 body.dark-mode .quiz-box,
 body.dark-mode .info-box,
 body.dark-mode .result-box {
-  background-color: #333; 
+  background: #333; 
   color: #ffffff; 
   border: 2px solid #343333; 
 }
-body.dark-mode button {
-  background-color: #4e4c4c;
-  color: #ffffff;
-}
-body.dark-mode button:hover{
-  background-color: #666;
-}
-
-body.dark-mode .buttons button.alternative {
-  background-color: #555;
+body.dark-mode button, 
+body.dark-mode .buttons button.alternative,
+body.dark-mode .buttons button.quit{
+  background-color:  #555 !important;
   color: #ffffff;
   border-color: #777;
 }
-
-body.dark-mode .buttons button.quit {
-  background-color: #555;
-  color: #ffffff;
-  border-color: #666;
+body.dark-mode button:hover, 
+body.dark-mode .buttons button.alternative:hover,
+body.dark-mode .buttons button.quit:hover{
+  background-color: #e4e3e3;
 }
-body.dark-mode .buttons button.alternative:hover {
-  background: #666;
+#themeToggle{
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color:#891209;
+  color: white;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  
 }
 
-body.dark-mode .buttons button.quit:hover {
- background: #666;
-}
-
-
+/* Center the elements */
 .start-btn, .info-box, .quiz-box, .result-box{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* Start button */
 .start-btn button {
     font-size: 25px;
     font-weight: 500;
@@ -81,6 +79,7 @@ body.dark-mode .buttons button.quit:hover {
     cursor: pointer;
   }
 
+  /* Info Box */
   .info-box{
     display: none;   
     width: 600px;
@@ -88,8 +87,6 @@ body.dark-mode .buttons button.quit:hover {
     rgba(255, 255, 255, 0.771));
     border-radius: 5px;
   }
-
-
   .info-box .info-rubrik{
   height: 60px;
   width: 100%;
@@ -101,21 +98,17 @@ body.dark-mode .buttons button.quit:hover {
   font-size: 20px;
   font-weight: 600;
   }
-
   .info-box .info-list {
     padding: 15px 30px;
   }
-  
   .info-box .info-list .info {
     margin: 5px 0;
     font-size: 17px;
   }
-  
   .info-box .info-list .info span {
     font-weight: 600;
     color: #de2d2d;
   }
-
   .info-box .buttons {
     height: 60px;
     display: flex;
@@ -124,7 +117,6 @@ body.dark-mode .buttons button.quit:hover {
     padding: 0 30px;
     border-top: 1px solid lightgrey;
   }
-  
   .info-box .buttons button {
     margin: 0 5px;
     height: 40px;
@@ -138,7 +130,6 @@ body.dark-mode .buttons button.quit:hover {
     border: 1px solid #891209;
     transition: all 0.3s ease;
   }
-
   .buttons button.alternative{
     color: #ffffff;
     background-color: #891209;
@@ -146,19 +137,19 @@ body.dark-mode .buttons button.quit:hover {
   .buttons button.alternative:hover{
     background-color: #d4665f;
   }
-
   .buttons button.quit{
     color: #891209;
   }
-
   .buttons button.quit:hover{
     color: #ffffff;
     background-color: #891209;
   }
+
+  /* Quiz Box */
   .quiz-box {
     display: none; 
     width: 700px;
-    height: 550px;
+    height: 570px;
     background: linear-gradient(rgba(249, 249, 249, 0.934),  
     rgba(255, 255, 255, 0.771));
     border-radius: 10px;
@@ -170,7 +161,6 @@ body.dark-mode .buttons button.quit:hover {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .quiz-box header {
     position: relative;
     z-index: 2;
@@ -183,15 +173,48 @@ body.dark-mode .buttons button.quit:hover {
     justify-content: space-between;
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
   }
-  
+  .quiz-box section {
+    padding: 20px;
+  }
+  .que-text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .option-list {
+    list-style: none;
+    padding: 0;
+  }
+  .option-list .option {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .option-list .option:hover {
+    background-color: #dad8d8;
+  } 
+  input[type="radio"] {
+    width: 15px; 
+    height: 15px;
+    transform: scale(1.5); 
+    margin-right: 20px; 
+    cursor: pointer; 
+}
  .title {
     font-size: 30px;
     font-weight: 600;
     color:#891209;
   }
   
+  /* Timer */
  .timer {
-
     color: #891209;
     background: white;
     border: 2px solid #8e8e8e85;
@@ -206,7 +229,6 @@ body.dark-mode .buttons button.quit:hover {
     font-weight: 400;
     font-size: 17px;
   }
-
     .timer-sec {
     font-size: 18px;
     font-weight: 500;
@@ -221,42 +243,10 @@ body.dark-mode .buttons button.quit:hover {
    
   }
 
-  .quiz-box section {
-    padding: 20px;
-  }
-  
-  .que-text {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .option-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .option-list .option {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
- 
-  .option-list .option:hover {
-    background-color: #dad8d8;
-  }
-  
+  /* Next Button */
   .next-btn {
     margin-top: 20px;
   }
-  
   .next-btn button {
     background-color: #891209;
     color: white;
@@ -267,74 +257,71 @@ body.dark-mode .buttons button.quit:hover {
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
   .next-btn button:hover {
     background-color: #d4665f;
   }
   
+  /* Result Box */ 
   .result-box{
-        background: #fff;
-        border-radius: 5px;
-        border: 2px solid #891209; 
-        display: none;
-        padding: 25px 30px;
-        max-width: 500px;
-        max-height: 500px;
-        overflow-y: auto;  
-    }
-    .result-box ul{
-      list-style-type: none; 
-      padding: 0;
-      margin: 0;
-  }
-  .result-box li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f4f4f4;
+    display: none;
+    background: #fff;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 2px solid #891209; 
+    padding: 25px 30px;
+    width: 600px;
+    height: 500px;
+    overflow-y: auto;  
+    }
+  .result-box .buttons {
+    margin-top: auto;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
+    }
+  .result-box .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
     font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #891209;
+    transition: all 0.3s ease;
+    }
+  .result-box ul{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+  }
+.result-box li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 .result-box li.Rätt {
   background-color: #9eeaaf; 
   border-color: #c3e6cb;
 }
 .result-box li.Fel {
-  background-color: #f0969d; 
+  background-color: #ffbac0; 
   border-color: #f5c6cb;
 }
-
-    .result-box .complete-text {
-        font-size: 24px;
-        color: #891209;
-        margin-bottom: 20px;
-    }
-    .result-box .buttons button {
-      margin: 0 10px;
-      height: 45px;
-      padding: 0 20px;
-      font-size: 18px;
-      font-weight: 500;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      border-radius: 5px;
-      border: 1px solid #891209;
-      transition: all 0.3s ease;
-    }
-
- 
-  #themeToggle{
-    padding: 10px 20px;
-    margin: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    background-color:#891209;
-   color: white;
-    font-weight: 500px;
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-    
+.result-box .complete-text {
+  font-size: 24px;
+  color: #891209;
+  margin-bottom: 20px;
   }
+
+
+
 
 
